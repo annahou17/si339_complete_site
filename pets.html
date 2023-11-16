@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style1.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <title>Pets</title>
@@ -31,6 +32,14 @@
     </header>
 
 <main id = "main">
+    <!-- new fun fact section for desktop view -->
+    <section class="fun-facts">
+        <h2>Pet Fun Facts</h2>
+        <button id="newFactBtn">Show New Fact</button>
+        <p id="factDisplay"></p>
+    </section>
+
+
     <section class= "pet-main"> 
         <div class= "pet-title">
             <h2>Milktea</h2>
@@ -334,6 +343,10 @@
 
     </section>
 
+   
+    
+    
+
 </main>
 <script>
     // Function to scroll to the top of the page
@@ -342,5 +355,46 @@
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
     }
 </script>
+<script>
+    const petFacts = [
+        "Cats have five toes on their front paws but only four on their back ones.",
+        "Dogs' sense of smell is about 100,000 times stronger than humans'.",
+        "Goldfish can distinguish between different human faces.",
+        "Elephants can't jump.",
+        "Honeybees can recognize human faces.",
+        "A group of flamingos is called a 'flamboyance'.",
+        "Penguins only have one mate their entire life.",
+        "Giraffes have the same number of neck vertebrae as humans: seven.",
+        "Kangaroos can't walk backward.",
+        "Cows can sleep standing up, but they can only dream lying down.",
+        "Rats laugh when they're tickled.",
+        "Owls can rotate their necks up to 270 degrees.",
+        "A flock of crows is known as a 'murder'.",
+        "Crocodiles can't stick their tongues out.",
+        "Squirrels plant thousands of new trees each year by forgetting where they put their acorns.",
+        "Butterflies can taste with their feet.",
+        "A shrimp's heart is in its head.",
+        "A group of ferrets is called a 'business'.",
+    ];
+
+    let currentFactIndex = 0;
+    const factDisplay = document.getElementById("factDisplay");
+
+    function displayFunFact() {
+        factDisplay.textContent = petFacts[currentFactIndex];
+    }
+
+    // Initial display
+    displayFunFact();
+
+    // Function to display a new fact on button click
+    document.getElementById("newFactBtn").addEventListener("click", function() {
+        currentFactIndex = (currentFactIndex + 1) % petFacts.length;
+        displayFunFact();
+    });
+</script>
+
+
+
 </body>
 </html>

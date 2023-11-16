@@ -524,6 +524,13 @@ figcaption {
     display: none;
 }
 
+/* fun fact section */
+.fun-facts {
+    display: none; /* Initially hidden on mobile */
+    text-align: center;
+    margin-top: 20px;
+}
+
 /* reduced motion */
 @media screen and (prefers-reduced-motion: reduce){
     .first .food_links a, .links a {
@@ -687,8 +694,6 @@ figcaption {
 
 
 
-
-
 }
 /* media query for desktop */
 @media only screen and (min-width: 768px) {
@@ -834,5 +839,41 @@ figcaption {
     .pet-images img:hover {
         transform: scale(1.05); 
         border-color: #fc036b; 
+    }
+
+    /* pets fun fact section */
+    .fun-facts {
+        display:block;
+    }
+    .fun-facts h2{
+        font-size: 33px;
+        font-style: italic;
+        background-color: #bbdff6;
+        color: #49497e;
+        
+    }
+    .fun-facts p{
+        font-size: 25px;
+        color: #49497e;
+    }
+    #newFactBtn {
+        padding: 10px 20px;
+        background-color: #1C5673;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    #newFactBtn:hover {
+        background-color: #389baf;
+    }
+
+    #factDisplay {
+        font-size: 18px;
+        margin-bottom: 20px;
     }
 }
