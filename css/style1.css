@@ -96,6 +96,7 @@ header {
     margin-top: 50px;
     margin-bottom: 30px;
 }
+
 .header-content h2 {
     font-size: 7vmin;
 }
@@ -481,6 +482,7 @@ figcaption {
     animation-duration: 5000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+
 }
 /* pet animation */
 @keyframes color {
@@ -531,21 +533,7 @@ figcaption {
     margin-top: 20px;
 }
 
-/* reduced motion */
-@media screen and (prefers-reduced-motion: reduce){
-    .first .food_links a, .links a {
-        animation: none;
-    }
-    .pet-title h2 {
-        animation: none;
-    }
-    .static {
-        display: block;
-    }
-    .gif {
-        display: none;
-    }
-}
+
 
 
 /* media query for tablet */
@@ -726,6 +714,13 @@ figcaption {
     .header-content h2 {
         font-size: 8vmin;
     }
+    .title h2 {
+        animation-name: slidein;
+        animation-iteration-count: infinite;
+        animation: slidein 5s infinite linear;
+    }
+    
+
 
     .landmarks img {
         width: auto;
@@ -796,6 +791,12 @@ figcaption {
         font-size: 40px;
     }
 
+    .first h2 {
+        animation-name: slidein;
+        animation-iteration-count: infinite;
+        animation: slidein 5s infinite linear;
+    }
+
     .first img{
         padding: 10px;
         border: solid 2px #1C5673;
@@ -809,6 +810,12 @@ figcaption {
         border-color: #fc036b; 
     }
 
+
+    .pet-title h2 {
+        animation-name: slidein;
+        animation-iteration-count: infinite;
+        animation: slidein 5s infinite linear;
+    }
     .pet-main .row img{
         width: 30%;
         border: 2px solid #325f75;
@@ -876,4 +883,42 @@ figcaption {
         font-size: 18px;
         margin-bottom: 20px;
     }
+    @keyframes slidein {
+        0% {
+            margin-left: 0%;
+        }
+        50% {
+            margin-left: 300px;
+        }
+        100% {
+            margin-left: 0%;
+        }
+    }
+}
+
+
+/* reduced motion */
+@media screen and (prefers-reduced-motion: reduce){
+    .first .food_links a, .links a {
+        animation: none;
+    }
+    .pet-title h2 {
+        animation: none;
+    }
+    .static {
+        display: block;
+    }
+    .gif {
+        display: none;
+    }
+    .title h2 {
+        animation: none;
+    }
+    .first h2 {
+        animation: none; 
+    }
+    .pet-title h2 {
+        animation: none;
+    }
+
 }
